@@ -4,9 +4,12 @@
 from urllib.parse import quote, unquote
 from datetime import datetime
 from decimal import Decimal as D
+import random
 
 from bs4 import BeautifulSoup
 import requests
+
+from ..djangobot import models
 
 BASE_URL = 'https://tabelog.com/rstLst/?vs=1&sa=&sk={search_keyword}&lid=hd_search1&vac_net=&svd={dt_string}&svt=1900&svps=2&hfc=1&Cat=RC&LstCat=RC02&LstCatD=RC0212&sw={search_prekeyword}'
 
@@ -29,7 +32,8 @@ class Talking(object):
         soup = BeautifulSoup(r.content, 'html.parser')
         l =soup.find_all('li', class_='list-rst')
         if len(l):
-            part = l[0]
+            num = random.randint(0, len(l) - 1)
+            part = l[num]
             name_href = part.find('a', class_="list-rst__rst-name-target")
             if name_href is None:
                 return '見つかんないですね'
@@ -48,7 +52,10 @@ class Talking(object):
             else:
                 body = None
 
-            return ' '.join([name, url, str(score), str(body), self.url])
+            return '\n'.join([name, url, str(score), str(body)])
 
         else:
             return '見つかんないですね'
+
+    def load_data(self):
+        pass
