@@ -29,10 +29,23 @@ class Talking(object):
         if len(l):
             part = l[0]
             name_href = part.find('a', class_="list-rst__rst-name-target")
+            if name_href is None:
+                return '見つかんないですね'
             name = name_href.string
             url = name_href.get('href')
-            score = D(part.find('span', class_="list-rst__rating-val").string or 0)
-            body = part.find('span', class_="list-rst__author-rvw-txt").string
+            _score = part.find('span', class_="list-rst__rating-val")
+            _body = part.find('span', class_="list-rst__author-rvw-txt")
+
+            if _score is not None:
+                score = D(_score)
+            else:
+                score = None
+
+            if _body is not None:
+                body = _body.string
+            else:
+                body = None
+
             return ' '.join([name, url])
 
         else:
