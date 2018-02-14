@@ -12,6 +12,7 @@ class Tebelog(models.Model):
     score = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True,)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
+    ita, chn, jpn, oth = 'ita', 'chn', 'jpn', 'oth'
     CATEGORY_CHOICES = (
         (ita, _('Itarian')),
         (chn, _('Chinese')),
