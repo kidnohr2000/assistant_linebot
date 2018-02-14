@@ -8,10 +8,7 @@ from decimal import Decimal as D
 from bs4 import BeautifulSoup
 import requests
 
-BASE_URL = 'https://tabelog.com/rstLst/?vs=1&sa=&'
-    'sk={search_keyword}&'
-    'lid=hd_search1&vac_net=&svd={dt_string}&svt=1900&svps=2&hfc=1&Cat=RC&'
-    'LstCat=RC02&LstCatD=RC0212&sw='
+BASE_URL = 'https://tabelog.com/rstLst/?vs=1&sa=&sk={search_keyword}&lid=hd_search1&vac_net=&svd={dt_string}&svt=1900&svps=2&hfc=1&Cat=RC&LstCat=RC02&LstCatD=RC0212&sw='
 
 
 class Talking(object):
