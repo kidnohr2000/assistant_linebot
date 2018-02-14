@@ -20,5 +20,5 @@ class Tebelog(models.Model):
         (oth, _('Other'))
     )
     category = models.CharField(
-        max_length=190, default=ORDER_RELATED,
+        max_length=190, default=oth,
         choices=CATEGORY_CHOICES)
