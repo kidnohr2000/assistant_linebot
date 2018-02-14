@@ -40,6 +40,6 @@ class JSONView(TemplateView):
                 text = Talking(text2)
                 line_bot_api.reply_message(
                     event.reply_token,
-                    TextSendMessage(text=text.greeting())
+                    TextSendMessage(text=text.search())
                 )
         return HttpResponse()
