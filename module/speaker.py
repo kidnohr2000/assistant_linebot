@@ -37,7 +37,7 @@ class Talking(object):
             _body = part.find('span', class_="list-rst__author-rvw-txt")
 
             if _score is not None:
-                score = D(_score)
+                score = D(_score.string)
             else:
                 score = None
 
