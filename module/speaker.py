@@ -16,7 +16,7 @@ class Talking(object):
     def __init__(self, message):
         self.message = message
         search_keyword = quote(quote(self.message))
-        dt_string = datetime.now().strftime('%Y%n%d')
+        dt_string = datetime.now().strftime('%Y%m%d')
         self.url = BASE_URL.format(
             search_keyword=search_keyword,
             dt_string=dt_string,
