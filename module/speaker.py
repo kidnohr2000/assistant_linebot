@@ -46,7 +46,7 @@ class Talking(object):
             else:
                 body = None
 
-            return ' '.join([name, url])
+            return ' '.join([name, url, str(score), str(body), self.url])
 
         else:
             return '見つかんないですね'
