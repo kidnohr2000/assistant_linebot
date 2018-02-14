@@ -31,8 +31,8 @@ class Talking(object):
             name_href = part.find('a', class_="list-rst__rst-name-target")
             name = name_href.string
             url = name_href.get('href')
-            score = D(part.find('span', class_="list-rst__rating-val") or 0)
-            body = part.find('span', class_="list-rst__author-rvw-txt")
+            score = D(part.find('span', class_="list-rst__rating-val").string or 0)
+            body = part.find('span', class_="list-rst__author-rvw-txt").string
             return ' '.join([name, url])
 
         else:
