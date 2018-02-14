@@ -9,7 +9,7 @@ import random
 from bs4 import BeautifulSoup
 import requests
 
-from ..djangobot import models
+from djangobot import models
 
 BASE_URL = 'https://tabelog.com/rstLst/?vs=1&sa=&sk={search_keyword}&lid=hd_search1&vac_net=&svd={dt_string}&svt=1900&svps=2&hfc=1&Cat=RC&LstCat=RC02&LstCatD=RC0212&sw={search_prekeyword}'
 
